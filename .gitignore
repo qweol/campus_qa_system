@@ -1,0 +1,32 @@
+# 环境变量（包含 API 密钥，不上传）
+.env
+
+# 向量数据库存储（本地生成，体积较大）
+storage/
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# 虚拟环境
+venv/
+.venv/
+env/
+
+# IDE 配置
+.idea/
+.vscode/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 日志
+*.log
