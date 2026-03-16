@@ -38,9 +38,7 @@ async def lifespan(_: FastAPI):
     global rag_chain, retriever
     try:
         rag_chain, retriever = build_rag_chain()
-    except Exception as _e:
-        import traceback
-        traceback.print_exc()
+    except Exception:
         rag_chain = None
         retriever = None
     yield

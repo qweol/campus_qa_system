@@ -1,19 +1,21 @@
 import os
-from dataclasses import dataclass
+from pathlib import Path
 
-from dotenv import load_dotenv
-
-
-load_dotenv()
-
-
-@dataclass(frozen=True)
 class Settings:
+    # OpenAI配置
     openai_api_key: str = os.getenv("OPENAI_API_KEY", "")
     openai_base_url: str = os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1")
-    llm_model: str = os.getenv("LLM_MODEL", "gpt-4o-mini")
-    embedding_model: str = os.getenv("EMBEDDING_MODEL", "text-embedding-3-small")
-    vector_db_path: str = os.getenv("VECTOR_DB_PATH", "./storage/faiss_index")
-
+    
+    # 模型配置
+    llm_model: str = "gpt-3.5-turbo"
+    embedding_model: str = "text-embedding-ada-002"
+    
+    # 路径配置
+    base_dir: Path = Path(__file__).parent.parent
+    docs_path: str = str(base_dir / "data" / "docs")
+    vector_db_path: str = str(base_dir / "data" / "vectorstore")
+    
+    # 检索配置
+    retrieval_k: int = 4
 
 settings = Settings()

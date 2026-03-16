@@ -1,14 +1,14 @@
 from pathlib import Path
 
 from dotenv import load_dotenv
-from langchain_community.document_loaders import DirectoryLoader, TextLoader
-from langchain_community.vectorstores import FAISS
-from langchain_openai import OpenAIEmbeddings
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_community.document_loaders import DirectoryLoader, TextLoader #文档加载器（读取文件夹中的文件）和 文本加载器（读取单个文本文件）
+from langchain_community.vectorstores import FAISS #向量数据库（Facebook 开源的向量检索库）
+from langchain_openai import OpenAIEmbeddings #向量化工具，使用 OpenAI 的嵌入模型（将文本转换为向量）
+from langchain_text_splitters import RecursiveCharacterTextSplitter #文本分割器（将文本分割为多个小块）
 
 from app.config import settings
 
-
+#加载文档
 def main() -> None:
     load_dotenv()
     data_path = Path("data")
@@ -26,19 +26,21 @@ def main() -> None:
     if not docs:
         raise ValueError("未读取到文档，请检查 data/*.md 文件。")
 
+#文本分割
     splitter = RecursiveCharacterTextSplitter(
-        chunk_size=500,
-        chunk_overlap=80,
-        separators=["\n\n", "\n", "。", "，", " ", ""],
+        chunk_size=500,  # 每块最多 500 个字符
+        chunk_overlap=80,  # 每块重叠 80 个字符
+        separators=["\n\n", "\n", "。", "，", " ", ""], # 优先在这些位置切分
     )
     chunks = splitter.split_documents(docs)
 
+#向量化
     embeddings = OpenAIEmbeddings(
         model=settings.embedding_model,
         api_key=settings.openai_api_key,
         base_url=settings.openai_base_url,
     )
-    vectorstore = FAISS.from_documents(chunks, embeddings)
+    vectorstore = FAISS.from_documents(chunks, embeddings) #调用OpenAI的嵌入模型将文本分割后的块转换为向量，并存储到向量数据库中
     output_path = Path(settings.vector_db_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     vectorstore.save_local(str(output_path))
