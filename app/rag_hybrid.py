@@ -10,11 +10,11 @@ from typing import Any, AsyncIterator
 from langchain_community.vectorstores import FAISS
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from langchain_core.runnables import RunnablePassthrough
+from langchain_core.runnables import RunnablePassthrough, RunnableLambda
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
-from langchain.retrievers import EnsembleRetriever
 from langchain_community.retrievers import BM25Retriever
 from langchain_community.document_loaders import DirectoryLoader, TextLoader
+from langchain_core.documents import Document
 
 from app.config import settings
 
@@ -57,7 +57,7 @@ def _load_documents_for_bm25():
     """加载文档用于BM25检索"""
     loader = DirectoryLoader(
         settings.docs_path,
-        glob="**/*.txt",
+        glob="**/*.md",
         loader_cls=TextLoader,
         loader_kwargs={"encoding": "utf-8"}
     )
@@ -78,6 +78,42 @@ def _format_docs(docs: list) -> str:
     return "\n\n".join(doc.page_content for doc in docs)
 
 
+class HybridRetriever:
+    """手动实现的混合检索器"""
+    def __init__(self, vector_retriever, bm25_retriever, weights=(0.7, 0.3)):
+        self.vector_retriever = vector_retriever
+        self.bm25_retriever = bm25_retriever
+        self.weights = weights
+
+    def invoke(self, query: str) -> list[Document]:
+        """混合检索：向量 + BM25"""
+        # 向量检索
+        vector_docs = self.vector_retriever.invoke(query)
+
+        # BM25检索
+        bm25_docs = self.bm25_retriever.invoke(query)
+
+        # 简单合并去重（基于内容）
+        seen_content = set()
+        merged_docs = []
+
+        # 先加入向量检索结果（权重更高）
+        for doc in vector_docs:
+            content_hash = hash(doc.page_content[:100])
+            if content_hash not in seen_content:
+                seen_content.add(content_hash)
+                merged_docs.append(doc)
+
+        # 再加入BM25结果
+        for doc in bm25_docs:
+            content_hash = hash(doc.page_content[:100])
+            if content_hash not in seen_content:
+                seen_content.add(content_hash)
+                merged_docs.append(doc)
+
+        return merged_docs[:6]  # 返回Top 6
+
+
 def build_hybrid_rag_chain() -> tuple[Any, Any]:
     """
     构建混合检索RAG链
@@ -86,28 +122,25 @@ def build_hybrid_rag_chain() -> tuple[Any, Any]:
     # 向量检索器
     vectorstore = _load_vectorstore()
     vector_retriever = vectorstore.as_retriever(search_kwargs={"k": 6})
-    
+
     # BM25关键词检索器
     docs = _load_documents_for_bm25()
     bm25_retriever = BM25Retriever.from_documents(docs)
     bm25_retriever.k = 6
-    
-    # 混合检索器：向量70% + 关键词30%
-    ensemble_retriever = EnsembleRetriever(
-        retrievers=[vector_retriever, bm25_retriever],
-        weights=[0.7, 0.3]
-    )
-    
+
+    # 混合检索器
+    hybrid_retriever = HybridRetriever(vector_retriever, bm25_retriever)
+
     prompt = PromptTemplate.from_template(_PROMPT_TEMPLATE)
     llm = _make_llm()
 
     chain = (
-        {"context": ensemble_retriever | _format_docs, "question": RunnablePassthrough()}
+        {"context": RunnableLambda(hybrid_retriever.invoke) | _format_docs, "question": RunnablePassthrough()}
         | prompt
         | llm
         | StrOutputParser()
     )
-    return chain, ensemble_retriever
+    return chain, hybrid_retriever
 
 
 def ask_question(chain: Any, retriever: Any, question: str) -> dict[str, Any]:

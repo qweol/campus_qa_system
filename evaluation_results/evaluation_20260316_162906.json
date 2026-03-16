@@ -1,0 +1,272 @@
+{
+  "v1": {
+    "version": "v1",
+    "results": [
+      {
+        "question": "图书馆的开放时间是什么？",
+        "answer": "主馆的开放时间为周一至周五：07:30-22:30，周六至周日：08:30-21:30，法定节假日为09:00-17:00。自习室全年24小时开放，需要刷校园卡进入，每日02:00-05:00进行清洁维护。寒暑假期间，开放时间会有所调整，请留意通知。希望对您有所帮助！如果还有其他问题，欢迎继续提问哦！😊",
+        "total_time": 4.139,
+        "retrieval_time": 0.95,
+        "generation_time": 3.189,
+        "retrieval_relevance": 1.0,
+        "answer_relevance": 0.67,
+        "is_unknown": false,
+        "num_docs": 4,
+        "category": "图书馆服务"
+      },
+      {
+        "question": "如何办理图书借阅证？",
+        "answer": "办理图书借阅证需要前往图书馆一楼的借阅服务台，携带有效的学生证或工作证件，填写相关信息并进行登记，即可领取借阅证。如果有其他问题，欢迎随时向我咨询哦！祝您阅读愉快！📚",
+        "total_time": 2.732,
+        "retrieval_time": 0.379,
+        "generation_time": 2.353,
+        "retrieval_relevance": 0.33,
+        "answer_relevance": 1.0,
+        "is_unknown": false,
+        "num_docs": 4,
+        "category": "图书馆服务"
+      },
+      {
+        "question": "学校有哪些奖学金？",
+        "answer": "这个问题我暂时没有找到相关资料，建议直接联系学校的奖学金办公室或相关部门咨询。祝您好运！🌟",
+        "total_time": 2.069,
+        "retrieval_time": 0.36,
+        "generation_time": 1.709,
+        "retrieval_relevance": 0.0,
+        "answer_relevance": 1.0,
+        "is_unknown": true,
+        "num_docs": 4,
+        "category": "学生服务"
+      },
+      {
+        "question": "如何申请助学金？",
+        "answer": "这个问题我暂时没有找到相关资料，建议直接联系学校的助学金办公室或相关部门咨询。祝您好运！如果有其他问题，我很乐意帮助您解答。😊",
+        "total_time": 2.381,
+        "retrieval_time": 0.357,
+        "generation_time": 2.024,
+        "retrieval_relevance": 0.5,
+        "answer_relevance": 0.5,
+        "is_unknown": true,
+        "num_docs": 4,
+        "category": "学生服务"
+      },
+      {
+        "question": "学校的地址在哪里？",
+        "answer": "学校的地址在校园北区，具体位置可以在校园网站或校园APP上查找地图导航。如果需要更详细的信息，可以联系学校总服务台，电话是010-62345678。祝您找到校园的位置！如果还有其他问题，欢迎随时向我咨询哦！😊",
+        "total_time": 4.325,
+        "retrieval_time": 0.636,
+        "generation_time": 3.689,
+        "retrieval_relevance": 0.0,
+        "answer_relevance": 1.0,
+        "is_unknown": false,
+        "num_docs": 4,
+        "category": "学校信息"
+      },
+      {
+        "question": "学校有多少个学院？",
+        "answer": "这个问题我暂时没有找到相关资料，建议直接联系教务处或相关部门咨询。祝您一切顺利！😊",
+        "total_time": 1.921,
+        "retrieval_time": 0.353,
+        "generation_time": 1.568,
+        "retrieval_relevance": 0.5,
+        "answer_relevance": 0.0,
+        "is_unknown": true,
+        "num_docs": 4,
+        "category": "学校信息"
+      },
+      {
+        "question": "计算机学院有哪些专业？",
+        "answer": "这个问题我暂时没有找到相关资料，建议直接联系学校的教务处或计算机学院咨询哦。祝您顺利找到您感兴趣的专业！如果有其他问题，欢迎随时向我提问哦。😊",
+        "total_time": 2.257,
+        "retrieval_time": 0.308,
+        "generation_time": 1.949,
+        "retrieval_relevance": 0.0,
+        "answer_relevance": 1.0,
+        "is_unknown": true,
+        "num_docs": 4,
+        "category": "院系专业"
+      },
+      {
+        "question": "如何选课？",
+        "answer": "选课分为三个阶段：预选阶段、正选阶段和补退选阶段。在预选阶段，学生可以自由选择课程；在正选阶段，系统根据志愿分配课程；在补退选阶段，学生可以调整课程。本科生每学期最低选课学分为12学分，最高选课学分为32学分。超过最高选课学分上限需要提交申请并经教务处审批。记得必修课程系统会自动置入课表，无需手动选择，选修课程按照先到先得原则分配，跨专业选课需要获得开课院系同意，重修课程优先级低于首次选课学生。祝您选课顺利！如果有更多问题，可以直接联系教务处或相关部门咨询哦。😊",
+        "total_time": 5.356,
+        "retrieval_time": 1.118,
+        "generation_time": 4.238,
+        "retrieval_relevance": 1.0,
+        "answer_relevance": 1.0,
+        "is_unknown": false,
+        "num_docs": 4,
+        "category": "教务管理"
+      },
+      {
+        "question": "校园卡在哪里办理？",
+        "answer": "这个问题我暂时没有找到相关资料，建议直接联系校园卡办理处或学生事务办公室咨询。祝您办理顺利！如果有其他问题，欢迎随时向我咨询哦！😊",
+        "total_time": 2.521,
+        "retrieval_time": 0.347,
+        "generation_time": 2.174,
+        "retrieval_relevance": 0.5,
+        "answer_relevance": 1.0,
+        "is_unknown": true,
+        "num_docs": 4,
+        "category": "学生服务"
+      },
+      {
+        "question": "学校的交通方式有哪些？",
+        "answer": "学校的交通方式有公交车、地铁、校园班车等多种选择，你可以根据自己的位置和时间选择合适的交通方式哦！如果需要更详细的信息，可以直接联系校园交通管理部门或查看校园网站上的交通指南。祝你出行顺利！🚌🚇🚗",
+        "total_time": 2.897,
+        "retrieval_time": 0.372,
+        "generation_time": 2.525,
+        "retrieval_relevance": 0.0,
+        "answer_relevance": 1.0,
+        "is_unknown": false,
+        "num_docs": 4,
+        "category": "交通指南"
+      }
+    ],
+    "statistics": {
+      "total_questions": 10,
+      "avg_retrieval_relevance": 0.383,
+      "avg_answer_relevance": 0.817,
+      "accuracy": 0.5,
+      "unknown_rate": 0.5,
+      "avg_total_time": 3.06,
+      "avg_retrieval_time": 0.518,
+      "avg_generation_time": 2.542
+    }
+  },
+  "v2": {
+    "version": "v2",
+    "results": [
+      {
+        "question": "图书馆的开放时间是什么？",
+        "answer": "图书馆的开放时间是周一到周五为07:30-22:30，周末为08:30-21:30，具体法定节假日的开放安排会另行通知。希望对您有帮助！如果还有其他问题，欢迎继续提问。",
+        "total_time": 3.093,
+        "retrieval_time": 0.693,
+        "generation_time": 2.4,
+        "retrieval_relevance": 1.0,
+        "answer_relevance": 1.0,
+        "is_unknown": false,
+        "num_docs": 6,
+        "category": "图书馆服务"
+      },
+      {
+        "question": "如何办理图书借阅证？",
+        "answer": "这个问题我暂时没有找到相关资料，建议直接联系图书馆借还书处或参考咨询部门咨询。祝您办理顺利！如果有其他问题，欢迎随时向我提问哦。祝您学习愉快！📚✨",
+        "total_time": 2.505,
+        "retrieval_time": 0.354,
+        "generation_time": 2.151,
+        "retrieval_relevance": 0.33,
+        "answer_relevance": 0.67,
+        "is_unknown": true,
+        "num_docs": 6,
+        "category": "图书馆服务"
+      },
+      {
+        "question": "学校有哪些奖学金？",
+        "answer": "这个问题我暂时没有找到相关资料，建议直接联系学校财务处或相关部门咨询。祝您好运！",
+        "total_time": 1.883,
+        "retrieval_time": 0.337,
+        "generation_time": 1.546,
+        "retrieval_relevance": 0.0,
+        "answer_relevance": 0.0,
+        "is_unknown": true,
+        "num_docs": 6,
+        "category": "学生服务"
+      },
+      {
+        "question": "如何申请助学金？",
+        "answer": "这个问题我暂时没有找到相关资料，建议直接联系学校的助学金管理部门或相关部门咨询。祝您申请顺利！如果有其他问题，欢迎继续向我提问哦。祝您学业顺利！",
+        "total_time": 2.576,
+        "retrieval_time": 0.379,
+        "generation_time": 2.197,
+        "retrieval_relevance": 0.5,
+        "answer_relevance": 1.0,
+        "is_unknown": true,
+        "num_docs": 6,
+        "category": "学生服务"
+      },
+      {
+        "question": "学校的地址在哪里？",
+        "answer": "学校的地址在图书馆一层大厅，具体位置可以前往图书馆咨询处进行查询哦。祝您生活愉快！",
+        "total_time": 1.991,
+        "retrieval_time": 0.365,
+        "generation_time": 1.626,
+        "retrieval_relevance": 0.0,
+        "answer_relevance": 1.0,
+        "is_unknown": false,
+        "num_docs": 6,
+        "category": "学校信息"
+      },
+      {
+        "question": "学校有多少个学院？",
+        "answer": "学校有多少个学院？",
+        "total_time": 1.704,
+        "retrieval_time": 0.356,
+        "generation_time": 1.348,
+        "retrieval_relevance": 0.5,
+        "answer_relevance": 0.5,
+        "is_unknown": false,
+        "num_docs": 6,
+        "category": "学校信息"
+      },
+      {
+        "question": "计算机学院有哪些专业？",
+        "answer": "这个问题我暂时没有找到相关资料，建议直接联系教务处或相关部门咨询。祝您顺利找到所需信息！如果有其他问题，欢迎随时向我提问哦。祝您生活愉快！",
+        "total_time": 2.372,
+        "retrieval_time": 0.317,
+        "generation_time": 2.055,
+        "retrieval_relevance": 0.5,
+        "answer_relevance": 0.0,
+        "is_unknown": true,
+        "num_docs": 6,
+        "category": "院系专业"
+      },
+      {
+        "question": "如何选课？",
+        "answer": "每学期选课分为三个阶段：\n1. 预选阶段：开学前两周，学生可以自由选择课程\n2. 正选阶段：开学第一周，系统根据志愿分配课程\n3. 补退选阶段：开学第二周，学生可以调整课程\n\n选课时需要注意必修课程系统自动置入课表，无需手动选择，选修课程按照先到先得原则分配，跨专业选课需要获得开课院系同意，重修课程优先级低于首次选课学生。如果有超过选课学分上限的情况，需要提交申请经教务处审批。祝您选课顺利！如果还有其他问题，欢迎继续咨询。",
+        "total_time": 4.202,
+        "retrieval_time": 0.573,
+        "generation_time": 3.629,
+        "retrieval_relevance": 1.0,
+        "answer_relevance": 1.0,
+        "is_unknown": false,
+        "num_docs": 6,
+        "category": "教务管理"
+      },
+      {
+        "question": "校园卡在哪里办理？",
+        "answer": "校园卡办理通常在校园卡服务中心或学生事务办公室办理，具体办理地点和流程可以咨询学校相关部门或查阅校园卡办理指南。祝您办理顺利！如果有其他问题，欢迎随时向我咨询。",
+        "total_time": 3.19,
+        "retrieval_time": 0.4,
+        "generation_time": 2.79,
+        "retrieval_relevance": 0.5,
+        "answer_relevance": 1.0,
+        "is_unknown": false,
+        "num_docs": 6,
+        "category": "学生服务"
+      },
+      {
+        "question": "学校的交通方式有哪些？",
+        "answer": "学校的交通方式有公交车、地铁、校园班车等多种选择，您可以根据自己的位置和出行需求选择合适的交通方式。如果需要更详细的信息，可以直接联系校园交通管理部门或查阅相关校园交通指南。祝您出行顺利！如果还有其他问题，欢迎继续咨询哦。",
+        "total_time": 2.926,
+        "retrieval_time": 0.363,
+        "generation_time": 2.563,
+        "retrieval_relevance": 0.0,
+        "answer_relevance": 1.0,
+        "is_unknown": false,
+        "num_docs": 6,
+        "category": "交通指南"
+      }
+    ],
+    "statistics": {
+      "total_questions": 10,
+      "avg_retrieval_relevance": 0.433,
+      "avg_answer_relevance": 0.717,
+      "accuracy": 0.6,
+      "unknown_rate": 0.4,
+      "avg_total_time": 2.644,
+      "avg_retrieval_time": 0.414,
+      "avg_generation_time": 2.231
+    }
+  }
+}

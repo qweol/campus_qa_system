@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "WebSearch"
+      "WebSearch",
+      "Bash(pip install:*)",
+      "Bash(PYTHONPATH=/c/Users/86159/Desktop/校园智能问答系统 python:*)"
     ]
   }
 }

@@ -12,8 +12,8 @@ class Settings:
     
     # 路径配置
     base_dir: Path = Path(__file__).parent.parent
-    docs_path: str = str(base_dir / "data" / "docs")
-    vector_db_path: str = str(base_dir / "data" / "vectorstore")
+    docs_path: str = str(base_dir / "data")
+    vector_db_path: str = str(base_dir / "storage" / "faiss_index")
     
     # 检索配置
     retrieval_k: int = 4
